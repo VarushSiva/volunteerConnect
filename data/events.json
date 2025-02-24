@@ -1,0 +1,40 @@
+[
+  { "title": "Cleanups", "start": "2025-01-01", "category": "Cleanups" },
+  {
+    "title": "Workshops",
+    "start": "2025-01-07",
+    "end": "2025-01-10",
+    "category": "Workshops"
+  },
+  {
+    "title": "Fundraisers",
+    "start": "2025-01-16T16:00:00",
+    "category": "Fundraisers"
+  },
+  {
+    "title": "Workshops",
+    "start": "2025-01-11",
+    "end": "2025-01-13",
+    "category": "Workshops"
+  },
+  {
+    "title": "Cleanups",
+    "start": "2025-01-12T14:30:00",
+    "category": "Cleanups"
+  },
+  {
+    "title": "Fundraisers",
+    "start": "2025-01-12T17:30:00",
+    "category": "Fundraisers"
+  },
+  {
+    "title": "Cleanups",
+    "start": "2025-01-13T07:00:00",
+    "category": "Cleanups"
+  },
+  {
+    "title": "Fundraisers",
+    "start": "2025-01-28",
+    "category": "Fundraisers"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "DisplayName": "admin",
+      "Username": "admin",
+      "Password": "password"
+    },
+
+    {
+      "DisplayName": "Joker",
+      "Username": "Joker",
+      "Password": "Joker416"
+    },
+
+    {
+      "DisplayName": "Onna",
+      "Username": "Onna",
+      "Password": "100953269"
+    }
+  ]
+}

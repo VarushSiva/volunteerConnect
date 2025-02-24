@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- CSS Section -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <h1>Welcome to Volunteer Connect</h1>
+
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./assets/25 Ways to Volunteer in Your Community.jpg"
+              class="d-block w-100"
+              alt="Volunteers planting trees. Obtained at https://students.1fbusa.com/pay-it-forward/25-ways-to-volunteer-in-your-community"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Past Volunteer #1</h5>
+              <p>Volunteering Experience: Planting Trees.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/volunteerdays-small.png"
+              class="d-block w-100"
+              alt="Volunteers cleaning the park. Obtained at https://www.trinet.com/insights/10-creative-ideas-for-company-wide-volunteer-days"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Past Volunteer #2</h5>
+              <p>Volunteering Experience: Cleaning Parks.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/Volunteering_planting_flowers.jpg"
+              class="d-block w-100"
+              alt="Volunteers planting plants. Obtained at https://ideas.demco.com/blog/6-volunteering-activities-help-kids-build-better-world/"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Past Volunteer #3</h5>
+              <p>Volunteering Experience: Planting Plants.</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <button type="button" id="OpportunitiesBtn" class="btn btn-primary">
+        Get Involved
+      </button>
+    </div>
+
+    <footer class="footer fixed-bottom bg-dark-subtle">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="privacy-policy.html">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tos.html">Terms of Service</a>
+            </li>
+          </ul>
+          <!-- Back to Top button obtained from: https://mdbootstrap.com/snippets/standard/mdbootstrap/2964350#html-tab-view -->
+          <button
+            type="button"
+            class="btn btn-danger btn-floating btn-lg"
+            id="btn-back-to-top"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </div>
+      </nav>
+    </footer>
+
+    <!-- Scripting Section -->
+    <script src="./node_modules/jQuery/dist/jquery.min.js"></script>
+    <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

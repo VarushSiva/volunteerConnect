@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <!-- CSS Section -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./calender/fonts/icomoon/style.css" />
+
+    <link
+      href="./calender/fullcalendar/packages/core/main.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./calender/fullcalendar/packages/daygrid/main.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./calender/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./calender/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <h1>Events</h1>
+      <!-- Filter for Events -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <select name="categoryFilter" id="categoryFilter">
+            <option value="all">All Events</option>
+            <option value="Fundraisers">Fundraisers</option>
+            <option value="Workshops">Workshops</option>
+            <option value="Cleanups">Cleanups</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Calender Template from https://colorlib.com/wp/template/calendar-20/ -->
+      <div id="calendar-container">
+        <div id="calendar"></div>
+      </div>
+    </div>
+
+    <footer class="footer fixed-bottom bg-dark-subtle">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="privacy-policy.html">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tos.html">Terms of Service</a>
+            </li>
+          </ul>
+          <button
+            type="button"
+            class="btn btn-danger btn-floating btn-lg"
+            id="btn-back-to-top"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </div>
+      </nav>
+    </footer>
+
+    <script src="./calender/js/jquery-3.3.1.min.js"></script>
+    <script src="./calender/js/popper.min.js"></script>
+    <script src="./calender/js/bootstrap.min.js"></script>
+
+    <script src="./calender/fullcalendar/packages/core/main.js"></script>
+    <script src="./calender/fullcalendar/packages/interaction/main.js"></script>
+    <script src="./calender/fullcalendar/packages/daygrid/main.js"></script>
+    <script src="./calender/fullcalendar/packages/timegrid/main.js"></script>
+    <script src="./calender/fullcalendar/packages/list/main.js"></script>
+
+    <script>
+      // Start of Calender Template Code
+      document.addEventListener("DOMContentLoaded", async function () {
+        var calendarEl = document.getElementById("calendar");
+        // Store fetched events into event variable
+        let events = [];
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: ["interaction", "dayGrid", "timeGrid", "list"],
+          height: "parent",
+          header: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,listMonth", // Updated to show Month view
+          },
+          defaultView: "dayGridMonth",
+          defaultDate: "2025-01-25",
+          navLinks: true, // can click day/week names to navigate views
+          editable: true,
+          eventLimit: true, // allow "more" link when too many events
+          events: events, // Initial event list
+        });
+
+        calendar.render();
+
+        // End of Calender Template Code
+        /**
+         * Dynamically load the events from the json file
+         */
+        async function LoadEvents() {
+          console.log("[INFO] Loading Events...");
+
+          return fetch("data/events.json")
+            .then((response) => response.text())
+            .then((data) => {
+              events = JSON.parse(data); // Store fetched events into events
+              calendar.addEventSource(events); // Add Events into Calender
+              console.log("[SUCCESS] Events loaded!");
+            })
+            .catch((error) => {
+              console.error("[ERROR] Unable to Fetch Events: ", error);
+            });
+        }
+
+        await LoadEvents();
+
+        let categoryFilter = document.getElementById("categoryFilter");
+
+        // if the categoryFilter is set to "all" continue using the entire events obj.
+        // else -> filter the events where the category strictly equals the categoryFiltered(dropdown)
+        function filterEvents(categoryFiltered) {
+          let filtered =
+            categoryFiltered === "all"
+              ? events
+              : events.filter((event) => event.category === categoryFiltered);
+
+          // Methods used on FullCalender for removing and re-adding events
+          calendar.removeAllEvents();
+          calendar.addEventSource(filtered);
+        }
+
+        // When CategoryFilter Dropdown changes, refilter to the chosen category
+        categoryFilter.addEventListener("change", (category) => {
+          filterEvents(category.target.value);
+        });
+
+        // Initial filter set to "all"
+        //Wait for data to load before filter
+        setTimeout(() => filterEvents("all"), 1000);
+      });
+    </script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./calender/js/main.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Assignment1",
+  "version": "1.0.0",
+  "description": "Assignment 1",
+  "main": "index.js",
+  "repository": "https://github.com/VarushSiva/INFT2202-12986/tree/main/assignments/assignment1",
+  "author": "Varush Sivalingam + Farhat Rahman",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.7.1"
+  }
+}

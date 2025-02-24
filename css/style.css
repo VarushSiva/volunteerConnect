@@ -1,0 +1,216 @@
+body {
+  background-color: #0a0a23;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 85%;
+  margin-bottom: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 650px;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.modal-header > h1,
+.modal-header,
+.modal-footer,
+.modal-body {
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-content,
+.modal-footer {
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group > span {
+  width: 150px;
+}
+
+.modal-content > .buttons {
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  align-items: center;
+}
+
+footer > nav > div > .navbar-nav {
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-around;
+  margin-left: 25%;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+section,
+h4,
+.news-description,
+#lightbox-caption {
+  color: white;
+}
+
+#news-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  gap: 15px;
+}
+
+.news-item {
+  border: solid 2px white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.footer {
+  margin-top: 100px;
+}
+
+.gallery-container {
+  text-align: center;
+  padding: 20px;
+}
+
+#gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery-img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.1);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#closeLightBox {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.loginFormContainer {
+  width: 500px;
+  background-color: #222fe9;
+  border-radius: 20px;
+}
+
+.formBox {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginForm > .form-group > .input-group > .input-group-addon-login {
+  width: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.modal-body > #submittedDetails {
+  text-align: left;
+}
+
+.search-results {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  display: none;
+  z-index: 1000;
+  padding: 10px;
+}
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.search-results li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.search-results li:hover {
+  background: #f8f9fa;
+}
+
+.search-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* * {
+  outline: solid 2px red;
+} */
