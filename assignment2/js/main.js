@@ -14,7 +14,7 @@
   async function fetchSearchData() {
     try {
       // Fetch events from local JSON
-      const eventsRes = await fetch("data/events.json");
+      const eventsRes = await fetch("./data/events.json");
       const eventsData = await eventsRes.json();
       console.log("Events Data:", eventsData); // Debugging
 
@@ -431,7 +431,7 @@
 
       try {
         // The await keyword tells JavaScript to pause here (thread) until the fetch request completes
-        const response = await fetch("../data/users.json");
+        const response = await fetch("./../data/users.json");
 
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
